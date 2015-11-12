@@ -1,0 +1,42 @@
+{
+  "name": "grapheme-js",
+  "version": "0.0.2",
+  "description": "Grapheme clustering for JavaScript with Unicode Standard Annex #29 compliance and some custom emoji enhancements.",
+  "main": "graphemejs.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/yo1dog/grapheme-js.git"
+  },
+  "keywords": [
+    "grapheme",
+    "graphemes",
+    "cluster",
+    "clusters",
+    "clustering",
+    "unicode",
+    "multibyte",
+    "multi-byte",
+    "multi",
+    "byte",
+    "emoji",
+    "emojis",
+    "character",
+    "characters",
+    "string",
+    "strings",
+    "parsing",
+    "length",
+    "count",
+    "counts"
+  ],
+  "author": "Mike",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/yo1dog/grapheme-js#readme"
+}
