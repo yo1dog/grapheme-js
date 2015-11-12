@@ -1,6 +1,12 @@
-# Grapheme JS
-Grapheme clustering for JavaScript with Unicode Standard Annex #29 compliance and some custom emoji enhancements.
+## NPM Viewers: View this on [GitHub](https://github.com/yo1dog/graphemejs#readme), instead. It looks much better.
 
+
+<br />
+# Grapheme JS [test]
+Grapheme clustering for JavaScript with [Unicode Standard Annex #29](http://www.unicode.org/reports/tr29/) compliance and some custom emoji enhancements.
+
+
+<br />
 ## Usage Example
 
 ```javascript
@@ -17,13 +23,67 @@ function assertMaxCharLength(str, maxLength) {
 }
 ```
 
+<br />
+## TOC
+- [graphemejs](#graphemejs)
+  - [`extract`](#extract)
+  - [`useLegacyClustering`](#uselegacyclustering)
+  - [`useCustomClustering`](#usecustomclustering)
+  - [Properties](#graphemejs-properties)
 
+<span></span>
+
+- [String Util](#string-util)
+  - [`extractGraphemeClusters`](#extractgraphemeclusters)
+  - [`buildStringFromGraphemeClusters`](#buildstringfromgraphemeclusters)
+  - [`sliceGraphemeClusters`](#slicegraphemeclusters)
+
+<span></span>
+
+- [Debug Util](#debug-util)
+  - [`getStringInfo`](#getstringinfo)
+  - [`getGraphemeClustersInfo`](#getgraphemeclustersinfo)
+
+<span></span>
+
+- Code Point Util
+  - `encode`
+  - `decode`
+  - `isOfType`
+  - `isTypeValid`
+  - `dict`
+
+<span></span>
+
+- Grapheme Cluster Util
+  - `extract`
+  - `applyCustomClustering`
+  - `isBoundry`
+  - `shouldBeCustomBoundry`
+
+<span></span>
+
+- Surrogate Pair Util
+  - `encode`
+  - `decode`
+  - `isSurrogatePair`
+  - `shouldBeEncoded`
+
+
+<span></span>
+
+- [Defaults](#defaults)
+  - [Properties](#properties-1)
+
+<br />
 
 --------------------
 
+<br />
 
 
-## graphemejs
+
+# graphemejs
 ```javascript
 var graphemejs = require('graphemejs');
 ```
@@ -31,6 +91,7 @@ var graphemejs = require('graphemejs');
 The main library. Provides access to the utils and some convenience functions.
 
 
+<br />
 ### extract
 ```
 graphemejs.extract(str, [useLegacyClustering, [useCustomClustering]])
@@ -38,6 +99,8 @@ graphemejs.extract(str, [useLegacyClustering, [useCustomClustering]])
 
 Alias of [`stringUtil.extractGraphemeClusters`](#extractgraphemeclusters).
 
+
+<br />
 ### useLegacyClustering
 ```
 graphemejs.useLegacyClustering()
@@ -51,6 +114,7 @@ var graphemejs = require('graphemejs').useLegacyClustering();
 ```
 
 
+<br />
 ### useCustomClustering
 ```
 graphemejs.useCustomClustering()
@@ -64,6 +128,7 @@ var graphemejs = require('graphemejs').useCustomClustering();
 ```
 
 
+<br />
 ### Properties
 
 Name                             | Description
@@ -77,12 +142,15 @@ Name                             | Description
 
 
 
+<br />
 
 --------------------
 
+<br />
 
 
-## String Util
+
+# String Util
 ```javascript
 var stringUtil = graphemejs.stringUtil;
 ```
@@ -90,6 +158,7 @@ var stringUtil = graphemejs.stringUtil;
 Provides functions for interfacing with strings. These functions can be used to interface with strings on the grapheme cluster level rather than on the code unit (character) level.
 
 
+<br />
 ### extractGraphemeClusters
 ```
 stringUtil.extractGraphemeClusters(str, [useLegacyClustering, [useCustomClustering]])
@@ -106,6 +175,7 @@ Decodes the given string into code points and groups them into grapheme clusters
 Returns `int[][]` an array of grapheme clusters extracted from the given string.
 
 
+<br />
 ### buildStringFromGraphemeClusters
 ```
 stringUtil.buildStringFromGraphemeClusters(graphemeClusters)
@@ -120,6 +190,7 @@ Encodes all the code points from the given grapheme clusters into a string.
 Returns `string` a string built from the given grapheme clusters.
 
 
+<br />
 ### sliceGraphemeClusters
 ```
 stringUtil.sliceGraphemeClusters(str, [start, [end, [useLegacyClustering, [useCustomClustering]]]])
@@ -151,13 +222,15 @@ function trancateStr(str, maxLength) {
 
 
 
+<br />
 
 --------------------
 
+<br />
 
 
 
-## Debug Util
+# Debug Util
 ```javascript
 var debugUtil = graphemejs.debugUtil;
 ```
@@ -165,6 +238,7 @@ var debugUtil = graphemejs.debugUtil;
 Provides functions for debugging strings and grapheme clusters. These functions can be used to get detailed, readable information about the content of strings and grapheme clusters.
 
 
+<br />
 ### getStringInfo
 ```
 debugUtil.getStringInfo(str, [useLegacyClustering, [useCustomClustering]])
@@ -226,6 +300,8 @@ Num: 9
 </pre>
 
 
+
+<br />
 ### getGraphemeClustersInfo
 ```
 debugUtil.getGraphemeClustersInfo(graphemeClusters)
@@ -269,12 +345,16 @@ Num: 9
 
 
 
+<br />
+
 --------------------
 
+<br />
 
 
 
-## Defaults
+
+# Defaults
 ```javascript
 var defaults = graphemejs.defaults;
 ```
@@ -316,9 +396,22 @@ graphemejs.extract('hello world', ..., false); // will NOT use custom clustering
 ```
 
 
+<br />
 ### Properties
 
 Name                           | Value   | Description
 -------------------------------|---------|-----------
 `defaults.useLegacyClustering` | `false` | The default value for the `useLegacyClustering` parameter. Controls if legacy clustering should be used by default.
 `defaults.useCustomClustering` | `false` | The default value for the `useCustomClustering` parameter. Controls if custom clustering should be used by default.
+
+
+
+<br />
+
+--------------------
+
+<br />
+
+
+
+More coming soon...
