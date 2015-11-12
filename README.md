@@ -125,9 +125,9 @@ The main library. Provides access to the utils and some convenience functions.
 
 
 <br />
-### graphemejs.extract
+### extract
 ```
-extract(str, [useLegacyClustering, [useCustomClustering]])
+graphemejs.extract(str, [useLegacyClustering, [useCustomClustering]])
 ```
 
 Alias of [`stringUtil.extractGraphemeClusters`](#extractgraphemeclusters).
