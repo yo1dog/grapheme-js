@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:yo1dog/graphemejs.git"
+    "url": "git@github.com:yo1dog/grapheme-js.git"
   },
   "keywords": [
     "grapheme",
@@ -38,5 +38,5 @@
   ],
   "author": "Mike",
   "license": "ISC",
-  "homepage": "https://github.com/yo1dog/graphemejs#readme"
+  "homepage": "https://github.com/yo1dog/grapheme-js#readme"
 }
