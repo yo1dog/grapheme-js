@@ -2,7 +2,7 @@
 
 
 <br />
-# Grapheme JS [test]
+# Grapheme JS
 Grapheme clustering for JavaScript with [Unicode Standard Annex #29](http://www.unicode.org/reports/tr29/) compliance and some custom emoji enhancements.
 
 
@@ -25,11 +25,16 @@ function assertMaxCharLength(str, maxLength) {
 
 <br />
 ## TOC
+- [Concepts](#concepts)
+- [Clustering Variants](#clustering-variants)
+
+<span></span>
+
 - [graphemejs](#graphemejs)
   - [`extract`](#extract)
   - [`useLegacyClustering`](#uselegacyclustering)
   - [`useCustomClustering`](#usecustomclustering)
-  - [Properties](#graphemejs-properties)
+  - [Properties](#properties)
 
 <span></span>
 
@@ -46,34 +51,62 @@ function assertMaxCharLength(str, maxLength) {
 
 <span></span>
 
-- Code Point Util
-  - `encode`
-  - `decode`
-  - `isOfType`
-  - `isTypeValid`
-  - `dict`
+- [Code Point Util](#code-point-util)
+  - [`encode`](#encode)
+  - [`decode`](#decode)
+  - [`isOfType`](#isOfType)
+  - [`isTypeValid`](#isTypeValid)
+  - [Properties](#properties-1)
 
 <span></span>
 
-- Grapheme Cluster Util
-  - `extract`
-  - `applyCustomClustering`
-  - `isBoundry`
-  - `shouldBeCustomBoundry`
+- [Grapheme Cluster Util](#grapheme-cluster-util)
+  - [extract`](#extract-1)
+  - [`applyCustomClustering`](#applycustomclustering)
+  - [`isBoundry`](#isboundry)
+  - [`shouldBeCustomBoundry`](#shouldbecustomboundry)
 
 <span></span>
 
-- Surrogate Pair Util
-  - `encode`
-  - `decode`
-  - `isSurrogatePair`
-  - `shouldBeEncoded`
+- [Surrogate Pair Util](#surrogate-pair-util)
+  - [`encode`](#encode-1)
+  - [`decode`](#decode-1)
+  - [`isSurrogatePair`](#issurrogatepair)
+  - [`shouldBeEncoded`](#shouldbeencoded)
 
 
 <span></span>
 
 - [Defaults](#defaults)
-  - [Properties](#properties-1)
+  - [Properties](#properties-2)
+
+
+
+<br />
+
+--------------------
+
+<br />
+
+
+
+# Concepts
+Coming soon...
+
+
+
+<br />
+
+--------------------
+
+<br />
+
+
+
+# Clustering Variants
+Coming soon...
+
+
 
 <br />
 
@@ -92,7 +125,7 @@ The main library. Provides access to the utils and some convenience functions.
 
 
 <br />
-### extract
+### graphemejs.extract
 ```
 graphemejs.extract(str, [useLegacyClustering, [useCustomClustering]])
 ```
@@ -135,7 +168,7 @@ Name                             | Description
 ---------------------------------|------------
 `graphemejs.stringUtil`          | The [String Util](#string-util).
 `graphemejs.debugUtil`           | The [Debug Util](#debug-util).
-`graphemejs.codePointUtil`       | The [Code Point Util](#codepoint-util).
+`graphemejs.codePointUtil`       | The [Code Point Util](#code-point-util).
 `graphemejs.graphemeClusterUtil` | The [Grapheme Cluster Util](#grapheme-cluster-util).
 `graphemejs.surrogatePairUtil`   | The [Surrogate Pair Util](#surrogate-pair-util).
 `graphemejs.defaults`            | The [Defaults](#defaults).
@@ -344,6 +377,66 @@ Num: 9
 
 
 
+<br />
+
+--------------------
+
+<br />
+
+
+
+# Code Point Util
+```javascript
+var codePointUtil = graphemejs.codePointUtil;
+```
+
+Coming soon...
+
+
+<br />
+### encode
+```
+codePointUtil.encode(codePoints)
+```
+
+Coming soon...
+
+
+<br />
+### decode
+```
+codePointUtil.decode(str)
+```
+
+Coming soon...
+
+
+<br />
+### isOfType
+```
+codePointUtil.isOfType(codePoint, codePointType_s)
+```
+
+Coming soon...
+
+
+<br />
+### isTypeValid
+```
+codePointUtil.isTypeValid(codePointType)
+```
+
+Coming soon...
+
+
+<br />
+### Properties
+
+Name                 | Description
+---------------------|------------
+`codePointUtil.dict` | Dictionary of code points by name.
+
+
 
 <br />
 
@@ -351,6 +444,111 @@ Num: 9
 
 <br />
 
+
+
+# Grapheme Cluster Util
+```javascript
+var graphemeClusterUtil = graphemejs.graphemeClusterUtil;
+```
+
+Coming soon...
+
+
+<br />
+### extract
+```
+codePointUtil.extract(codePoints, [useLegacyClustering])
+```
+
+Coming soon...
+
+
+<br />
+### applyCustomClustering
+```
+codePointUtil.applyCustomClustering(graphemeClusters)
+```
+
+Coming soon...
+
+
+<br />
+### isBoundry
+```
+codePointUtil.isBoundry(codePoint1, codePoint2, [useLegacyClustering])
+```
+
+Coming soon...
+
+
+<br />
+### shouldBeCustomBoundry
+```
+codePointUtil.shouldBeCustomBoundry(graphemeCluster1, graphemeCluster2)
+```
+
+Coming soon...
+
+
+
+<br />
+
+--------------------
+
+<br />
+
+
+
+# Surrogate Pair Util
+```javascript
+var surrogatePairUtil = graphemejs.surrogatePairUtil;
+```
+
+Coming soon...
+
+
+<br />
+### encode
+```
+surrogatePairUtil.encode(codePoint)
+```
+
+Coming soon...
+
+
+<br />
+### decode
+```
+surrogatePairUtil.decode(highSurrogateCodeUnit, lowSurrogateCodeUnit)
+```
+
+Coming soon...
+
+
+<br />
+### isSurrogatePair
+```
+surrogatePairUtil.isSurrogatePair(codeUnit1, codeUnit2)
+```
+
+Coming soon...
+
+
+<br />
+### shouldBeEncoded
+```
+surrogatePairUtil.shouldBeEncoded(codePoint)
+```
+
+Coming soon...
+
+
+
+<br />
+
+--------------------
+
+<br />
 
 
 
@@ -399,19 +597,7 @@ graphemejs.extract('hello world', ..., false); // will NOT use custom clustering
 <br />
 ### Properties
 
-Name                           | Value   | Description
--------------------------------|---------|-----------
-`defaults.useLegacyClustering` | `false` | The default value for the `useLegacyClustering` parameter. Controls if legacy clustering should be used by default.
-`defaults.useCustomClustering` | `false` | The default value for the `useCustomClustering` parameter. Controls if custom clustering should be used by default.
-
-
-
-<br />
-
---------------------
-
-<br />
-
-
-
-More coming soon...
+Name                                                                       | Value   | Description
+---------------------------------------------------------------------------|---------|-----------
+`defaults.useLegacyClustering` <a name="defaults-uselegacyclustering"></a> | `false` | The default value for the `useLegacyClustering` parameter. Controls if legacy clustering should be used by default.
+`defaults.useCustomClustering` <a name="defaults-usecustomclustering"></a> | `false` | The default value for the `useCustomClustering` parameter. Controls if custom clustering should be used by default.
