@@ -457,7 +457,7 @@ Coming soon...
 <br />
 ### extract
 ```
-codePointUtil.extract(codePoints, [useLegacyClustering])
+graphemeClusterUtil.extract(codePoints, [useLegacyClustering])
 ```
 
 Coming soon...
@@ -466,7 +466,7 @@ Coming soon...
 <br />
 ### applyCustomClustering
 ```
-codePointUtil.applyCustomClustering(graphemeClusters)
+graphemeClusterUtil.applyCustomClustering(graphemeClusters)
 ```
 
 Coming soon...
@@ -475,7 +475,7 @@ Coming soon...
 <br />
 ### isBoundry
 ```
-codePointUtil.isBoundry(codePoint1, codePoint2, [useLegacyClustering])
+graphemeClusterUtil.isBoundry(codePoint1, codePoint2, [useLegacyClustering])
 ```
 
 Coming soon...
@@ -484,7 +484,7 @@ Coming soon...
 <br />
 ### shouldBeCustomBoundry
 ```
-codePointUtil.shouldBeCustomBoundry(graphemeCluster1, graphemeCluster2)
+graphemeClusterUtil.shouldBeCustomBoundry(graphemeCluster1, graphemeCluster2)
 ```
 
 Coming soon...
