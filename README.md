@@ -54,14 +54,14 @@ function assertMaxCharLength(str, maxLength) {
 - [Code Point Util](#code-point-util)
   - [`encode`](#encode)
   - [`decode`](#decode)
-  - [`isOfType`](#isOfType)
-  - [`isTypeValid`](#isTypeValid)
+  - [`isOfType`](#isoftype)
+  - [`isTypeValid`](#istypevalid)
   - [Properties](#properties-1)
 
 <span></span>
 
 - [Grapheme Cluster Util](#grapheme-cluster-util)
-  - [extract`](#extract-1)
+  - [`extract`](#extract-1)
   - [`applyCustomClustering`](#applycustomclustering)
   - [`isBoundry`](#isboundry)
   - [`shouldBeCustomBoundry`](#shouldbecustomboundry)
@@ -127,7 +127,7 @@ The main library. Provides access to the utils and some convenience functions.
 <br />
 ### graphemejs.extract
 ```
-graphemejs.extract(str, [useLegacyClustering, [useCustomClustering]])
+extract(str, [useLegacyClustering, [useCustomClustering]])
 ```
 
 Alias of [`stringUtil.extractGraphemeClusters`](#extractgraphemeclusters).
@@ -234,8 +234,8 @@ Parameter           | Type    | Description
 str                 | string  | String to slice.
 start               | int     | **Optional** - Where to start slicing from. This is passed as the first paramter to the `Array.slice` function called on the extracted grapheme clusters.
 end                 | int     | **Optional** - Where to stop slicing at. This is passed as the second paramter to the `Array.slice` function called on the extracted grapheme clusters.
-useLegacyClustering | boolean | **Optional** - If legacy (`true`) or extended (`false`) grapheme clusters should be used (see [Clustering Variants](#clustering-variants)). Defaults to `defaults.useLegacyClustering` (see [Defaults](#defaults)).
-useCustomClustering | boolean | **Optional** - If custom clustering should be applied to the grapheme clusters (`true`) or not (`false`) (see [Clustering Variants](#clustering-variants)). Defaults to `defaults.useCustomClustering`  (see [Defaults](#defaults)).
+useLegacyClustering | boolean | **Optional** - If legacy (`true`) or extended (`false`) grapheme clusters should be used (see [Clustering Variants](#clustering-variants)). Defaults to [`defaults.useLegacyClustering`](#defaults-uselegacyclustering) (see [Defaults](#defaults)).
+useCustomClustering | boolean | **Optional** - If custom clustering should be applied to the grapheme clusters (`true`) or not (`false`) (see [Clustering Variants](#clustering-variants)). Defaults to [`defaults.useCustomClustering`](#defaults-usecustomclustering)  (see [Defaults](#defaults)).
 
 Slices the given string by grapheme clusters instead of by characters. It does this by extracting grapheme clusters from the given string, slicing them via the `Array.slice` function, and then building them back into a string.
 
@@ -280,8 +280,8 @@ debugUtil.getStringInfo(str, [useLegacyClustering, [useCustomClustering]])
 Parameter           | Type    | Description
 --------------------|---------|------------
 str                 | string  | String to get debug information about.
-useLegacyClustering | boolean | **Optional** - If legacy (`true`) or extended (`false`) grapheme clusters should be used (see [Clustering Variants](#clustering-variants)). Defaults to `defaults.useLegacyClustering` (see [Defaults](#defaults)).
-useCustomClustering | boolean | **Optional** - If custom clustering should be applied to the grapheme clusters (`true`) or not (`false`) (see [Clustering Variants](#clustering-variants)). Defaults to `defaults.useCustomClustering`  (see [Defaults](#defaults)).
+useLegacyClustering | boolean | **Optional** - If legacy (`true`) or extended (`false`) grapheme clusters should be used (see [Clustering Variants](#clustering-variants)). Defaults to [`defaults.useLegacyClustering`](#defaults-uselegacyclustering) (see [Defaults](#defaults)).
+useCustomClustering | boolean | **Optional** - If custom clustering should be applied to the grapheme clusters (`true`) or not (`false`) (see [Clustering Variants](#clustering-variants)). Defaults to [`defaults.useCustomClustering`](#defaults-usecustomclustering) (see [Defaults](#defaults)).
 
 Extracts grapheme clusters from the given string and returns a string containing readable debug information about them.
 
