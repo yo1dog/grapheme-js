@@ -4,7 +4,7 @@ var graphemejs     = require('../graphemejs');
 
 // hey-$-you (9)
 // $ = 'PERSON WITH BLOND HAIR' (U+1F471) unicode caracter
-var str = '\u0068\u0065\u0079\u002D\uD83D\uDC71\u002D\u0079\u006F\u0075';
+var str = process.argv[2];
 var asciiStr = 'hey-$-you';
 
 // extract extended custom grapheme clusters from the string

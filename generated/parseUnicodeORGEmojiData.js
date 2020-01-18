@@ -1,3 +1,4 @@
+// parses the emoji data from http://www.unicode.org/Public/emoji/2.0/emoji-data.txt
 module.exports = function parseUnicodeORGEmojiData(str) {
   var emojis = [];
   
@@ -20,12 +21,15 @@ module.exports = function parseUnicodeORGEmojiData(str) {
     }
     
     // parse the emoji information
+    // "Format:"
+    // "codepoint(s) ; property=Yes # [count] (character(s)) name" 
+    
     var result = new RegExp(
-      '^' +                                 // start of line
-      '([0-9A-F]{4,5})' +                   // code point (4 or 5 hex digits) - capture group 1
-      '( ([0-9A-F]{4,5}))?' +               // modifier code point (4 or 5 hex digits) - capture group 3
-      '\\s*;\\s*' +                         // ;
-      '(text|emoji)' +                      // type ("text" or "emoji") - capture group 4
+      '^' +                                                             // start of line
+      '([0-9A-F]{4,5})' +                                               // first code point (4 or 5 hex digits) - capture group 1
+      '(\\.\\.([0-9A-F]{4,5}))?' +                                      // second code point (two dots, then 4 or 5 hex digits, all optional) - capture group 2 and 3
+      '\\s*;\\s*' +                                                     // ;
+      '(Emoji|Emoji_Presentation|Emoji_Modifier|Emoji_Modifier_Base)' + // type ("Emoji", "Emoji_Presentation", "Emoji_Modifier", or "Emoji_Modifier_Base") - capture group 4
       '\\s*;\\s*' +                         // ;            
       '(L1|L2|NA)' +                        // level ("L1", "L2", or "NA") - capture group 5
       '\\s*;\\s*' +                         // ;
